@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MuseCore Preview</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="hero">
+          <div>
+            <p class="eyebrow">Personal music companion</p>
+            <h1>MuseCore</h1>
+            <p>Pick a mood, build a playlist, and let Python tune the recommendations behind the scenes.</p>
+          </div>
+          <div class="album-orbit" aria-hidden="true">
+            <div class="disc disc-a"></div>
+            <div class="disc disc-b"></div>
+            <div class="note">♪</div>
+          </div>
+        </header>
+
+        <nav class="tabs" aria-label="MuseCore sections">
+          <button class="tab is-active" data-view="home">Home</button>
+          <button class="tab" data-view="mood">Mood</button>
+          <button class="tab" data-view="playlist">Playlist</button>
+          <button class="tab" data-view="favorites">Favorites</button>
+          <button class="tab" data-view="insights">Insights</button>
+        </nav>
+
+        <section class="status" id="status">Connecting to MuseCore API...</section>
+
+        <section class="view is-visible" id="home-view">
+          <div class="section-title">
+            <h2>Recommended for You</h2>
+            <p>Based on mood, favorites, energy, recent plays, and skipped songs.</p>
+          </div>
+          <div class="now-playing" id="now-playing">
+            <span class="pulse"></span>
+            <div>
+              <strong>Ready to play</strong>
+              <p>Select any song to build your history.</p>
+            </div>
+          </div>
+          <div class="song-list" id="recommendations"></div>
+        </section>
+
+        <section class="view" id="mood-view">
+          <div class="section-title">
+            <h2>Mood Picker</h2>
+            <p>Generate a playlist with one tap.</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="study-mode" />
+            <span>Study-friendly only</span>
+          </label>
+          <div class="mood-grid" id="mood-grid"></div>
+        </section>
+
+        <section class="view" id="playlist-view">
+          <div class="section-title">
+            <h2 id="playlist-title">Focused Playlist</h2>
+            <p>Mood-matched songs sorted by favorites and plays.</p>
+          </div>
+          <div class="song-list" id="playlist"></div>
+        </section>
+
+        <section class="view" id="favorites-view">
+          <div class="section-title">
+            <h2>Favorites</h2>
+            <p>Your saved songs influence the recommender.</p>
+          </div>
+          <div class="song-list" id="favorites"></div>
+        </section>
+
+        <section class="view" id="insights-view">
+          <div class="section-title">
+            <h2>Music Insights</h2>
+            <p>A tiny dashboard for your listening personality.</p>
+          </div>
+          <div class="metrics" id="metrics"></div>
+          <div class="panel">
+            <h3>Most Played</h3>
+            <div class="song-list compact" id="most-played"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

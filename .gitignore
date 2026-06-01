@@ -1,0 +1,14 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+
+# Xcode
+DerivedData/
+*.xcuserstate
+xcuserdata/
+ios/MuseCore.xcodeproj/
+
+# OS
+.DS_Store
+Thumbs.db
